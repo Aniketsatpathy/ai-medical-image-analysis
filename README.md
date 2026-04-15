@@ -53,7 +53,8 @@ This solution is applicable in:
   - Pneumonia  
 
 > Note: Dataset is not included due to size constraints.
-Here is the Download Link: https://www.kaggle.com/datasets/paultimothymooney/chest-xray-pneumonia?resource=download
+> Here is the Download Link: https://www.kaggle.com/datasets/paultimothymooney/chest-xray-pneumonia?resource=download
+
 ---
 
 ## ⚙️ System Architecture
@@ -74,9 +75,7 @@ Here is the Download Link: https://www.kaggle.com/datasets/paultimothymooney/che
 - **Precision (Pneumonia):** ~84%  
 
 ### Confusion Matrix:
-[[162 72]
-[ 10 380]]
-
+![Confusion Matrix](https://github.com/Aniketsatpathy/ai-medical-image-analysis/raw/main/outputs/confusion_matrix.png)
 
 👉 The model is highly effective at detecting pneumonia cases, minimizing missed diagnoses.
 
@@ -91,87 +90,165 @@ This:
 - Provides visual justification
 - Helps doctors interpret results
 
+### Grad-CAM Visualization Example:
+![Grad-CAM Result](https://github.com/Aniketsatpathy/ai-medical-image-analysis/raw/main/outputs/gradcam_result.jpg)
+
 ---
 
-## 🖼️ Screenshots
+## 🖼️ Screenshots & Visualizations
 
-### 🔹 Streamlit UI
-![UI](assets/ui.png)
+### 🔹 Interactive Dashboard UI
+![Dashboard UI](https://github.com/Aniketsatpathy/ai-medical-image-analysis/raw/main/assets/Dashboard_UI.png)
 
-### 🔹 Prediction Output
-![Prediction](assets/prediction.png)
+### 🔹 Dashboard Heatmap Analysis
+![Dashboard Heatmap](https://github.com/Aniketsatpathy/ai-medical-image-analysis/raw/main/assets/Dashboard_HeatMap.png)
 
-### 🔹 Grad-CAM Heatmap
-![GradCAM](assets/gradcam.png)
+### 🔹 Dashboard Closeup - Heatmap Details
+![Dashboard Closeup](https://github.com/Aniketsatpathy/ai-medical-image-analysis/raw/main/assets/Dashboard_Closeup_heatmap.png)
 
-### 🔹 Training Graph
-![Training](assets/training.png)
+### 🔹 Input Radiology Image
+![Input Radiology](https://github.com/Aniketsatpathy/ai-medical-image-analysis/raw/main/assets/Input_Radiology.png)
 
-### 🔹 Confusion Matrix
-![Confusion Matrix](assets/confusion_matrix.png)
+### 🔹 Diagnosis Output
+![Diagnosis](https://github.com/Aniketsatpathy/ai-medical-image-analysis/raw/main/assets/Diagnosis.png)
+
+### 🔹 Heatmap Visualization
+![Heatmap](https://github.com/Aniketsatpathy/ai-medical-image-analysis/raw/main/assets/Heatmap.png)
+
+### 🔹 Analysis Report
+![Analysis Report](https://github.com/Aniketsatpathy/ai-medical-image-analysis/raw/main/assets/Analysis%20Report.png)
+
+### 🔹 Training Performance Graph
+![Training Graph](https://github.com/Aniketsatpathy/ai-medical-image-analysis/raw/main/outputs/training.png)
+
+### 🔹 Loss Curve During Training
+![Loss Curve](https://github.com/Aniketsatpathy/ai-medical-image-analysis/raw/main/outputs/loss.png)
+
+### 🎥 Dashboard Demo Video
+[Watch Dashboard Demo](https://github.com/Aniketsatpathy/ai-medical-image-analysis/raw/main/assets/Dashboard_Demo.mp4)
 
 ---
 
 ## 💻 Installation
 
-```
+```bash
+# Clone the repository
 git clone https://github.com/Aniketsatpathy/ai-medical-image-analysis.git
 cd ai-medical-image-analysis
 
+# Create virtual environment
 python -m venv myenv
+
+# Activate virtual environment
+# On Windows:
 .\myenv\Scripts\activate
+# On macOS/Linux:
+source myenv/bin/activate
 
+# Install dependencies
 pip install -r requirements.txt
+```
 
+---
 
+## ▶️ Usage
 
-▶️ Usage
-
-Run Main Pipeline
+### Run Main Pipeline
+```bash
 python main.py
+```
 
-Run Streamlit UI
+### Run Streamlit Web Interface
+```bash
 streamlit run app.py
+```
 
+The Streamlit app will open in your browser at `http://localhost:8501`
 
+---
 
-📁 Project Structure
+## 📁 Project Structure
+
+```
 AI-Medical-Image-Analysis/
 │
-├── src/
-├── data/
-├── models/
-├── outputs/
-├── assets/
-├── app.py
-├── main.py
-├── requirements.txt
-├── README.md
-└── .gitignore
+├── src/                      # Source code modules
+├── data/                      # Dataset directory
+├── models/                    # Trained model files
+├── outputs/                   # Generated outputs (graphs, matrices, predictions)
+│   ├── confusion_matrix.png
+│   ├── gradcam_result.jpg
+│   ├── loss.png
+│   └── training.png
+├── assets/                    # UI screenshots and demo files
+│   ├── Dashboard_UI.png
+│   ├── Dashboard_HeatMap.png
+│   ├── Dashboard_Closeup_heatmap.png
+│   ├── Input_Radiology.png
+│   ├── Diagnosis.png
+│   ├── Heatmap.png
+│   ├── Analysis Report.png
+│   ├── gradcam_result.jpg
+│   └── Dashboard_Demo.mp4
+├── app.py                     # Streamlit application
+├── main.py                    # Main training pipeline
+├── requirements.txt           # Project dependencies
+├── README.md                  # This file
+└── .gitignore                # Git ignore file
+```
 
+---
 
-
-🎯 Learning Outcomes
+## 🎯 Learning Outcomes
 
 Through this project, I gained hands-on experience in:
 
-Building end-to-end ML pipelines
-Transfer learning using MobileNetV2
-Debugging real-world ML systems
-Implementing explainable AI (Grad-CAM)
-Developing interactive ML applications using Streamlit
-Structuring projects for production readiness
+- Building end-to-end ML pipelines
+- Transfer learning using MobileNetV2
+- Debugging real-world ML systems
+- Implementing explainable AI (Grad-CAM)
+- Developing interactive ML applications using Streamlit
+- Structuring projects for production readiness
 
+---
 
+## 🚀 Future Improvements
 
-🚀 Future Improvements
-Deploy application on cloud
-Support multi-disease detection
-Improve dataset balancing
-Add REST API integration
-Enhance UI/UX
+- [ ] Deploy application on cloud (AWS, Azure, GCP)
+- [ ] Support multi-disease detection
+- [ ] Improve dataset balancing with data augmentation
+- [ ] Add REST API integration
+- [ ] Enhance UI/UX with additional features
+- [ ] Implement model versioning and tracking
+- [ ] Add real-time monitoring and logging
 
-👨‍💻 Author
-Aniket Satpathy
+---
+
+## 📝 License
+
+This project is open-source and available under the MIT License.
+
+---
+
+## 👨‍💻 Author
+
+**Aniket Satpathy**
+
+GitHub: [@Aniketsatpathy](https://github.com/Aniketsatpathy)
 
 ⭐ If you found this useful, consider giving a star!
+
+---
+
+## 🤝 Contributing
+
+Contributions are welcome! Feel free to:
+- Report bugs
+- Suggest improvements
+- Submit pull requests
+
+---
+
+## 📞 Contact & Support
+satpathyaniket81@gmail.com
+For questions or collaboration inquiries, feel free to reach out!
