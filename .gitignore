@@ -1,0 +1,9 @@
+venv/
+myenv/
+__pycache__/
+*.pyc
+data/test
+data/train
+data/val
+models/
+temp.jpg
